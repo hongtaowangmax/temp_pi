@@ -12,7 +12,7 @@ device_folder = glob.glob(base_dir + '28*')[0]
 device_file = device_folder + '/w1_slave'
 #子线程读取温度，通过接口获取消息的前两行
 def read_temp_raw():
-    catdata = subprocess.Popen(['cat',device_file], stdout=subprocess.PIPE, stderr=subproces$
+    catdata = subprocess.Popen(['cat',device_file], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out,err = catdata.communicate()
     out_decode = out.decode('utf-8')
     lines = out_decode.split('\n')
